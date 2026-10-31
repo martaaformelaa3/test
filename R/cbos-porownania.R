@@ -20,4 +20,26 @@ dim(cbos)
 head(cbos)
 
 ### Zadanie 7 — wieś i duże miasta
+#Wybierz respondentów z kategorii `miejscowosc` równych `"wieś"` i `"miasto 500 000 i więcej"`
+cbos_wies_miasto <- cbos %>% 
+  filter(miejscowosc == "wieś" | miejscowosc == "miasto 500 000 i więcej")
+#Dla każdej z tych dwóch grup policz **procent**  odpowiedzi na pytanie `kierunek` (procent w obrębie grupy, nie w całej tabeli).
+cbos_procenty <- cbos_wies_miasto %>% 
+  group_by(miejscowosc) %>% 
+  count(kierunek) %>% 
+  mutate(procent = n / sum(n) * 100)
 
+cbos_procenty
+#Czy udział odpowiedzi „W złym” był taki sam?
+
+# Nie – mieszkańcy miast 500k+ znacznie częściej uważają, że sprawy idą w złym kierunku (61.4%) 
+# w porównaniu do mieszkańców wsi (28.1%).
+
+#Sprawdź liczbę respondentów w obu grupach. Samo porównanie procentów bez liczebności może być mylące.
+
+cbos_liczebnosc <- cbos_wies_miasto %>% 
+  count(miejscowosc, name = "lacznie_respondentow")
+
+cbos_liczebnosc
+
+#filter(...), count(miejscowosc, kierunek), group_by(miejscowosc)
