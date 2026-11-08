@@ -245,6 +245,8 @@ dane %>%
 
 **CHALLENGE 1:** Jaki jest najstarszy film Woody'ego Allena dostępny na Netflixie?
 
+julka to fla ciebie
+
 ```{r 21, eval=FALSE}
 # miejsce na kod
 ch1 <- source("./Zadania/Zadanie1.R")
@@ -406,18 +408,24 @@ dane %>%
 
 **CHALLENGE 2:** Jakie są trzy najwyżej oceniane komedie dostępne w języku polskim?
 
+Wiktoria to dla ciebie
 
 ```{r 34, eval=FALSE}
 # miejsce na kod
+ch1 <- source("./Zadania/Zadanie2.R")
+print(ch1)
 ```
 
 
 
 **CHALLENGE 3:** Dla produkcji z lat 2019 oraz 2020 jaki jest średni czas między premierą a pojawieniem się na Netflixie?
 
+to dla Marty
 
 ```{r 35, eval=FALSE}
 # miejsce na kod
+ch1 <- source("./Zadania/Zadanie3.R")
+print(ch1)
 ```
 
 
