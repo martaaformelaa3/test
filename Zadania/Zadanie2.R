@@ -1,6 +1,9 @@
 names(dane)
 dane %>%
-  filter(grepl("Comedy", Genre) & grepl("Polish", Languages)) %>%
+  filter(Genre %>%
+           str_detect('Comedy'))%>%
+  filter(Languages %>%
+           str_detect('Polish'))%>%
   arrange(desc(IMDb.Score)) %>%
   select(Title, IMDb.Score) %>%
-  head(3)
+  top_n(3)
